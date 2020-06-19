@@ -66,7 +66,7 @@ public final class Client {
 
 	public void setFidele(boolean fidele) {
 		this.fidele = fidele;
-		Main.getInstance().getDataBase().setFidele(fidele, id);
+		// Main.getInstance().getDataBase().setFidele(fidele, id);
 	}
 
 }

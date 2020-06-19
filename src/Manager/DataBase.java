@@ -26,12 +26,12 @@ public class DataBase {
         Connection connection = null;
         Statement statement = null;
 
-        File tempFile = new File("BdD.db");
+        File tempFile = new File("save/BdD.db");
         existe = tempFile.exists();
 
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
 
             if (!existe) {
                 statement = connection.createStatement();
@@ -52,7 +52,6 @@ public class DataBase {
                         + "langue CHAR(25), anneeCD INT, realisateur CHAR(25));";
                 statement.executeUpdate(setup);
                 statement.close();
-                System.out.println("test");
             }
 
             connection.close();
@@ -67,7 +66,7 @@ public class DataBase {
     public void loadClient() {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -98,7 +97,7 @@ public class DataBase {
     public void ajoutClient(Client client) {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -121,7 +120,7 @@ public class DataBase {
     public void supprClient(Client client) {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -143,7 +142,7 @@ public class DataBase {
     public void loadCommande() {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -180,7 +179,7 @@ public class DataBase {
     public void ajoutCommande(Commande commande) {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -205,7 +204,7 @@ public class DataBase {
     public void supprCommande(Commande commande) {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -228,7 +227,7 @@ public class DataBase {
     public void loadEmprunt() {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -269,7 +268,7 @@ public class DataBase {
     public void ajoutEmprunt(Emprunt emprunt) {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -294,7 +293,7 @@ public class DataBase {
     public void supprEmprunt(Emprunt emprunt) {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -319,7 +318,7 @@ public class DataBase {
     public void loadProduit() {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -394,7 +393,7 @@ public class DataBase {
     public void ajoutProduit(Produit produit) {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -406,40 +405,40 @@ public class DataBase {
                 produit.getID(), produit.getTarifJourna(), produit.getTitre(), produit.getEmprunte(),
                 produit.getType());
 
-                switch(produit.getType()) {
-                    case "BD":
-                        ajoutProduit0 += "auteur, volume, illustrateur)";
-                        ajoutProduit1 += String.format("'%s', %s, '%s');", ((BD) produit).getAuteur(),
-                        ((BD) produit).getVolume(), ((BD) produit).getIllustrateur());
-                        break;
+            switch(produit.getType()) {
+                case "BD":
+                    ajoutProduit0 += "auteur, volume, illustrateur)";
+                    ajoutProduit1 += String.format("'%s', %s, '%s');", ((BD) produit).getAuteur(),
+                    ((BD) produit).getVolume(), ((BD) produit).getIllustrateur());
+                    break;
 
-                    case "CD":
-                        ajoutProduit0 += "anneeCD)";
-                        ajoutProduit1 += String.format("'%s');", ((CD) produit).getAnnee());
-                        break;
+                case "CD":
+                    ajoutProduit0 += "anneeCD)";
+                    ajoutProduit1 += String.format("'%s');", ((CD) produit).getAnnee());
+                    break;
 
-                    case "Dictionnaire":
-                        ajoutProduit0 += "langue)";
-                        ajoutProduit1 += String.format("'%s');", ((Dictionnaire) produit).getLangue());
-                        break;
+                case "Dictionnaire":
+                    ajoutProduit0 += "langue)";
+                    ajoutProduit1 += String.format("'%s');", ((Dictionnaire) produit).getLangue());
+                    break;
 
-                    case "DVD":
-                        ajoutProduit0 += "realisateur)";
-                        ajoutProduit1 += String.format("'%s');", ((DVD) produit).getRealisateur());
-                        break;
+                case "DVD":
+                    ajoutProduit0 += "realisateur)";
+                    ajoutProduit1 += String.format("'%s');", ((DVD) produit).getRealisateur());
+                    break;
 
-                    case "Manuel Scolaire":
-                        ajoutProduit0 += "auteur, anneeManuelScolaire)";
-                        ajoutProduit1 += String.format("'%s', '%s');", ((ManuelScolaire) produit).getAuteur(),
-                        ((ManuelScolaire) produit).getAnnee());
-                        break;
+                case "Manuel Scolaire":
+                    ajoutProduit0 += "auteur, anneeManuelScolaire)";
+                    ajoutProduit1 += String.format("'%s', '%s');", ((ManuelScolaire) produit).getAuteur(),
+                    ((ManuelScolaire) produit).getAnnee());
+                    break;
 
-                    case "Roman":
-                        ajoutProduit0 += "auteur, tome)";
-                        ajoutProduit1 += String.format("'%s', %s);", ((Roman) produit).getAuteur(),
-                        ((Roman) produit).getTome());
-                        break;
-                    }
+                case "Roman":
+                    ajoutProduit0 += "auteur, tome)";
+                    ajoutProduit1 += String.format("'%s', %s);", ((Roman) produit).getAuteur(),
+                    ((Roman) produit).getTome());
+                    break;
+                }
 
             ajoutProduit = ajoutProduit0 + ajoutProduit1;
             statement.executeUpdate(ajoutProduit);
@@ -459,7 +458,7 @@ public class DataBase {
     public void supprProduit(Produit produit) {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 
@@ -486,32 +485,10 @@ public class DataBase {
         loadEmprunt();
     }
 
-
-    public void setEmprunte(boolean emprunte, UUID id) {
-        try {
-            Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
-            statement = connection.createStatement();
-            connection.setAutoCommit(false);
-
-            String setEmprunte = String.format("UPDATE produit set emprunte = %s WHERE id = '%s'", emprunte, id);
-            statement.executeUpdate(setEmprunte);
-
-            statement.close();
-            connection.commit();
-            connection.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void setFidele(boolean fidele, UUID id) {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:BdD.db");
+            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
             statement = connection.createStatement();
             connection.setAutoCommit(false);
 

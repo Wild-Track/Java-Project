@@ -59,6 +59,6 @@ public abstract class Produit {
 
 	public void setEmprunte(boolean emprunte) {
 		this.emprunte = emprunte;
-		Main.getInstance().getDataBase().setEmprunte(emprunte, id);
+		// Main.getInstance().getDataBase().setEmprunte(emprunte, id);
 	}
 }
