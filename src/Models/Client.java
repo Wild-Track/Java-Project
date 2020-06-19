@@ -2,8 +2,6 @@ package Models;
 
 import java.util.UUID;
 
-import Main_app.Main;
-
 public final class Client {
 
 	public static final double REDUCTION_FIDELE = 0.1;

@@ -485,24 +485,25 @@ public class DataBase {
         loadEmprunt();
     }
 
-    public void setFidele(boolean fidele, UUID id) {
-        try {
-            Class.forName("org.sqlite.JDBC");
-            connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
-            statement = connection.createStatement();
-            connection.setAutoCommit(false);
+    // public void setFidele(boolean fidele, UUID id) {
+    //     try {
+    //         Class.forName("org.sqlite.JDBC");
+    //         connection = (Connection) DriverManager.getConnection("jdbc:sqlite:save/BdD.db");
+    //         statement = connection.createStatement();
+    //         connection.setAutoCommit(false);
 
-            String setFidele = String.format("UPDATE client set fidele = %s WHERE id = '%s'", fidele, id);
-            statement.executeUpdate(setFidele);
+    //         String setFidele = String.format("UPDATE client set fidele = %s WHERE id = '%s'", fidele, id);
+    //         statement.executeUpdate(setFidele);
 
-            statement.close();
-            connection.commit();
-            connection.close();
+    //         statement.close();
+    //         connection.commit();
+    //         connection.close();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+    //     } catch (SQLException e) {
+    //         e.printStackTrace();
+    //     } catch (ClassNotFoundException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+    // Not work rip
 }
