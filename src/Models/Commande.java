@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.UUID;
+
+import Main_app.Main;
+
 import java.lang.StringBuilder;
 
 public final class Commande {
@@ -22,7 +25,22 @@ public final class Commande {
 		this.client = client;
 	}
 
+	public Commande(UUID id, LocalDate date, double reduction, Client client) {
+		this.id = id;
+		this.date = date;
+		this.reduction = reduction;
+		this.emprunts = new HashSet<Emprunt>();
+		this.client = client;
+	}
+
 	public boolean ajoutEmprunt(Emprunt emprunt) {
+		emprunt.getProduit().setEmprunte(true);
+
+		Main.getInstance().getDataBase().ajoutEmprunt(emprunt);
+		return emprunts.add(emprunt);
+	}
+
+	public boolean ajoutEmpruntDB(Emprunt emprunt) {
 		emprunt.getProduit().setEmprunte(true);
 
 		return emprunts.add(emprunt);
@@ -31,6 +49,7 @@ public final class Commande {
 	public boolean supprEmprunt(Emprunt emprunt) {
 		emprunt.getProduit().setEmprunte(false);
 
+		Main.getInstance().getDataBase().supprEmprunt(emprunt);
 		return emprunts.remove(emprunt);
 	}
 
@@ -63,7 +82,7 @@ public final class Commande {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 
-		builder.append(String.format("Commande n°\n", id));
+		builder.append(String.format("Commande nÂ°\n", id));
 		builder.append(String.format(" - Client: %s\n", client));
 		builder.append(String.format(" - Date: %s\n", date));
 		builder.append("\n");
@@ -76,8 +95,8 @@ public final class Commande {
 		builder.append("\n");
 		builder.append("Prix:\n");
 		builder.append(String.format(" - Total: %s\n", getPrixBrut()));
-		builder.append(String.format(" - Réduction -%s\n", getPrixBrut() - getPrix()));
-		builder.append(String.format(" - Après réduction %s\n", getPrix()));
+		builder.append(String.format(" - RÃ©duction -%s\n", getPrixBrut() - getPrix()));
+		builder.append(String.format(" - AprÃ¨s rï¿½duction %s\n", getPrix()));
 
 		return builder.toString();
 	}

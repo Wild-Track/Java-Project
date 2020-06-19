@@ -1,11 +1,19 @@
 package Models.Produits;
 
+import java.util.UUID;
+
 public final class DVD extends Support_numerique {
 
 	private final String realisateur;
 
 	public DVD(String titre, double tarif_journa, String realisateur) {
 		super(titre, tarif_journa);
+
+		this.realisateur = realisateur;
+	}
+
+	public DVD(UUID id, String titre, double tarifJourna, boolean emprunte, String realisateur) {
+		super(id, titre, tarifJourna, emprunte);
 
 		this.realisateur = realisateur;
 	}

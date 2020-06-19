@@ -166,7 +166,7 @@ public class AjoutProduit extends JPanel {
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        JLabel labelAnnee = new JLabel("Année :  ");
+        JLabel labelAnnee = new JLabel("AnnÃ©e :  ");
         JTextField textAnnee = new JTextField();
 
         panelAnnee.add(labelAnnee, BorderLayout.WEST);
@@ -229,7 +229,7 @@ public class AjoutProduit extends JPanel {
 
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        JLabel labelRealisateur = new JLabel("Réalisateur :  ");
+        JLabel labelRealisateur = new JLabel("RÃ©alisateur :  ");
         JTextField textRealisateur = new JTextField();
 
         panelRealisateur.add(labelRealisateur, BorderLayout.WEST);
@@ -261,7 +261,7 @@ public class AjoutProduit extends JPanel {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
         JLabel labelAuteur = new JLabel("Auteur :  ");
-        JLabel labelAnnee = new JLabel("Année  :  ");
+        JLabel labelAnnee = new JLabel("AnnÃ©e  :  ");
         JTextField textAuteur = new JTextField();
         JTextField textAnnee = new JTextField();
 

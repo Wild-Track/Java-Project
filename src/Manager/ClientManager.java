@@ -14,6 +14,11 @@ public final class ClientManager {
 	}
 
 	public boolean ajoutClient(Client client) {
+		Main.getInstance().getDataBase().ajoutClient(client);
+		return clients.add(client);
+	}
+
+	public boolean ajoutClientDB(Client client) {
 		return clients.add(client);
 	}
 
@@ -22,11 +27,11 @@ public final class ClientManager {
 			return false;
 		}
 
+		Main.getInstance().getDataBase().supprClient(client);
 		return clients.remove(client);
 	}
 
 	public Iterable<Client> getClients() {
 		return clients;
 	}
-
 }

@@ -1,11 +1,19 @@
 package Models.Produits;
 
+import java.util.UUID;
+
 public final class Dictionnaire extends Document {
 
 	private final String langue;
 
 	public Dictionnaire(String titre, double tarif_journa, String langue) {
 		super(titre, tarif_journa);
+
+		this.langue = langue;
+	}
+
+	public Dictionnaire(UUID id, String titre, double tarifJourna, boolean emprunte, String langue) {
+		super(id, titre, tarifJourna, emprunte);
 
 		this.langue = langue;
 	}

@@ -3,6 +3,7 @@ package Manager;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import Main_app.Main;
 import Models.Produits.Produit;
 import Models.Produits.InfoProduit;
 
@@ -17,6 +18,12 @@ public class StockManager {
     }
 
     public boolean ajoutProduit(Produit produit) {
+        ajouteInfoProduit(produit);
+        Main.getInstance().getDataBase().ajoutProduit(produit);
+        return produits.add(produit);
+    }
+
+    public boolean ajoutProduitDB(Produit produit) {
         ajouteInfoProduit(produit);
         return produits.add(produit);
     }
@@ -37,6 +44,7 @@ public class StockManager {
             return false;
         }
 
+        Main.getInstance().getDataBase().supprProduit(produit);
         supprInfoProduit(produit);
         return produits.remove(produit);
     }

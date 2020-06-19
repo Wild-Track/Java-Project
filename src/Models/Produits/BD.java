@@ -1,12 +1,21 @@
 package Models.Produits;
 
+import java.util.UUID;
+
 public final class BD extends Livre {
 
 	private final int volume;
 	private final String illustrateur;
 
-	public BD(String titre, double tarif_journa, String auteur, int volume, String illustrateur) {
-		super(titre, tarif_journa, auteur);
+	public BD(String titre, double tarifJourna, String auteur, int volume, String illustrateur) {
+		super(titre, tarifJourna, auteur);
+
+		this.volume = volume;
+		this.illustrateur = illustrateur;
+	}
+
+	public BD(UUID id, String titre, double tarifJourna, boolean emprunte, String auteur, int volume, String illustrateur) {
+		super(id, titre, tarifJourna, auteur, emprunte);
 
 		this.volume = volume;
 		this.illustrateur = illustrateur;

@@ -1,18 +1,18 @@
 
-Liens des différentes sources utilisé pour ce projet :
+Liens des diffï¿½rentes sources utilisï¿½ pour ce projet :
 
-- Thème utilisé : 
+- Thï¿½me utilisï¿½ :
 	https://github.com/atarw/material-ui-swing
 
-- JHyperLinkLabel utilisé pour le fil de navigation :
+- JHyperLinkLabel utilisï¿½ pour le fil de navigation :
 	https://alvinalexander.com/blog/post/jfc-swing/emulate-hyperlink-in-java-with-jlinklabel/
 
-- Icon utilisé : 
+- Icon utilisï¿½ :
 	https://materialdesignicons.com/
 
 Le package Utils est repris de la doc en apache en reprennant que selon dont a besoin ici.
 
-- Disposition des éléments :
+- Disposition des ï¿½lï¿½ments :
 	https://docs.oracle.com/javase/tutorial/uiswing/components/scrollpane.html
 	https://docs.oracle.com/javase/tutorial/uiswing/layout/border.html
 
@@ -25,12 +25,15 @@ Le package Utils est repris de la doc en apache en reprennant que selon dont a b
 	https://stackoverflow.com/questions/13681977/jcombobox-autocomplete
 
 
-- Format des différentes données :
+- Format des diffï¿½rentes donnï¿½es :
 	https://docs.oracle.com/javase/8/docs/api/java/util/Map.html
 
 	https://docs.oracle.com/javase/8/docs/api/?java/lang/Iterable.html
 	https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/5013326-manipulez-vos-donnees-avec-les-streams
 	https://stackoverflow.com/questions/10335662/convert-java-array-to-iterable
 
-- Création et modification d'une facture en fichier excel : 
+- Crï¿½ation et modification d'une facture en fichier excel :
 	https://www.viralpatel.net/java-read-write-excel-file-apache-poi/
+
+CrÃ©ation : Lecture/ Ã©criture de la Base de DonnÃ©es:
+	https://www.tutorialspoint.com/sqlite/sqlite_java.htm

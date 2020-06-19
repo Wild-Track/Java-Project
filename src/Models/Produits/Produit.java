@@ -2,6 +2,8 @@ package Models.Produits;
 
 import java.util.UUID;
 
+import Main_app.Main;
+
 public abstract class Produit {
 
 	protected final UUID id;
@@ -14,6 +16,13 @@ public abstract class Produit {
 		this.titre = titre;
 		this.tarifJourna = tarif_journa;
 		this.emprunte = false;
+	}
+
+	public Produit(UUID id, String titre, double tarifJourna, boolean emprunte) {
+		this.id = id;
+		this.titre = titre;
+		this.tarifJourna = tarifJourna;
+		this.emprunte = emprunte;
 	}
 
 	protected int produitHashCode() {
@@ -50,5 +59,6 @@ public abstract class Produit {
 
 	public void setEmprunte(boolean emprunte) {
 		this.emprunte = emprunte;
+		Main.getInstance().getDataBase().setEmprunte(emprunte, id);
 	}
 }

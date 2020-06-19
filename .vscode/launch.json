@@ -1,0 +1,196 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<Projet-POO>",
+            "request": "launch",
+            "mainClass": "Main_app.Main",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FastMath<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.commons.math3.util.FastMath",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.Version",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HPSFPropertiesExtractor<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hpsf.extractor.HPSFPropertiesExtractor",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PropertyIDMap<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hpsf.wellknown.PropertyIDMap",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BiffDrawingToXml<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hssf.dev.BiffDrawingToXml",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BiffViewer<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hssf.dev.BiffViewer",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EFBiffViewer<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hssf.dev.EFBiffViewer",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FormulaViewer<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hssf.dev.FormulaViewer",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ReSave<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hssf.dev.ReSave",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RecordLister<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hssf.dev.RecordLister",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ExcelExtractor<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hssf.extractor.ExcelExtractor",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OldExcelExtractor<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.hssf.extractor.OldExcelExtractor",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-POIFSDump<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.poifs.dev.POIFSDump",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-POIFSLister<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.poifs.dev.POIFSLister",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-POIFSViewer<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.poifs.dev.POIFSViewer",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-POIFSReader<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.poifs.eventfilesystem.POIFSReader",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-POIFSFileSystem<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.poifs.filesystem.POIFSFileSystem",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-VBAMacroExtractor<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.poifs.macros.VBAMacroExtractor",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DrawingDump<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.util.DrawingDump",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FontMetricsDumper<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.util.FontMetricsDumper",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HexDump<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.apache.poi.util.HexDump",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-KeyChain<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.jdesktop.swingx.auth.KeyChain",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EyeDropperColorChooserPanel<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.jdesktop.swingx.color.EyeDropperColorChooserPanel",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ColumnControlIcon<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.jdesktop.swingx.icon.ColumnControlIcon",
+            "projectName": "Projet-POO"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OSInfo<Projet-POO>",
+            "request": "launch",
+            "mainClass": "org.sqlite.util.OSInfo",
+            "projectName": "Projet-POO"
+        }
+    ]
+}

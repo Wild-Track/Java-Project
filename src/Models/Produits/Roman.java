@@ -1,11 +1,19 @@
 package Models.Produits;
 
+import java.util.UUID;
+
 public final class Roman extends Livre {
 
 	private final int tome;
 
 	public Roman(String titre, double tarif_journa, String auteur, int tome) {
 		super(titre, tarif_journa, auteur);
+
+		this.tome = tome;
+	}
+
+	public Roman(UUID id, String titre, double tarifJourna, String auteur, int tome, boolean emprunte) {
+		super(id, titre, tarifJourna, auteur, emprunte);
 
 		this.tome = tome;
 	}

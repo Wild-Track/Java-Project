@@ -2,6 +2,7 @@ package Manager;
 
 import java.util.HashSet;
 
+import Main_app.Main;
 import Models.Client;
 import Models.Commande;
 import Utils.IterableUtils;
@@ -15,6 +16,11 @@ public final class CommandeManager {
 	}
 
 	public boolean ajoutCommande(Commande commande) {
+		Main.getInstance().getDataBase().ajoutCommande(commande);
+		return commandes.add(commande);
+	}
+
+	public boolean ajoutCommandeDB(Commande commande) {
 		return commandes.add(commande);
 	}
 
@@ -23,6 +29,7 @@ public final class CommandeManager {
 			return false;
 		}
 
+		Main.getInstance().getDataBase().supprCommande(commande);
 		return commandes.remove(commande);
 	}
 

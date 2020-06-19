@@ -50,7 +50,7 @@ public class Fen_main extends JFrame {
         this.accueil = new Accueil();
 
         this.setLayout(new BorderLayout());
-        this.setTitle("Gestion Vidéothèque");
+        this.setTitle("Gestion VidÃ©othÃ¨que");
         this.setSize(1150, 700);
         this.setLocation(((int) (screenSize.getWidth() - 1150)/2), (int) ((screenSize.getHeight() - 700)/2));
 

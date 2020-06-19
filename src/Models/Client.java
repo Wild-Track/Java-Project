@@ -2,6 +2,8 @@ package Models;
 
 import java.util.UUID;
 
+import Main_app.Main;
+
 public final class Client {
 
 	public static final double REDUCTION_FIDELE = 0.1;
@@ -13,6 +15,13 @@ public final class Client {
 
 	public Client(String n, String p, boolean fidele) {
 		this.id = UUID.randomUUID();
+		this.nom = n;
+		this.prenom = p;
+		this.fidele = fidele;
+	}
+
+	public Client(String n, String p, boolean fidele, UUID uuid) {
+		this.id = uuid;
 		this.nom = n;
 		this.prenom = p;
 		this.fidele = fidele;
@@ -57,6 +66,7 @@ public final class Client {
 
 	public void setFidele(boolean fidele) {
 		this.fidele = fidele;
+		Main.getInstance().getDataBase().setFidele(fidele, id);
 	}
 
 }

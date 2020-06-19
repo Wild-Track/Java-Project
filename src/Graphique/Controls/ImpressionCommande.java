@@ -25,9 +25,9 @@ public class ImpressionCommande {
 
 		try {
 			if (commande.getClient().getFidele()) {
-				this.fideleTxt = "Fidèle";
+				this.fideleTxt = "FidÃ¨le";
 			} else {
-				this.fideleTxt = "Non Fidèle";
+				this.fideleTxt = "Non FidÃ¨le";
 			}
 
 			FileInputStream file = new FileInputStream(new File("facture/template.xls"));
@@ -36,7 +36,7 @@ public class ImpressionCommande {
 			HSSFSheet sheet = workbook.getSheetAt(0);
 			Row dataRow = sheet.createRow(1);
 
-			//Insertion des données
+			//Insertion des donnï¿½es
 			dataRow.createCell(0).setCellValue(DateUtils.toUsualDate(commande.getDate()));
 			dataRow.createCell(1).setCellValue(commande.getClient().getNom());
 			dataRow.createCell(2).setCellValue(commande.getClient().getPrenom());
@@ -65,10 +65,10 @@ public class ImpressionCommande {
 			outFile.close();
 			workbook.close();
 
-			JOptionPane.showMessageDialog(null, "            Facture généré !", "Information",
+			JOptionPane.showMessageDialog(null, "            Facture gÃ©nÃ©rÃ© !", "Information",
 					JOptionPane.INFORMATION_MESSAGE);
 		} catch (FileNotFoundException e) {
-			JOptionPane.showMessageDialog(null, "    Fichier temp non trouvé !!", "Erreur", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "    Fichier temp non trouvÃ© !!", "Erreur", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "    Une erreur est survenue !!", "Erreur", JOptionPane.ERROR_MESSAGE);

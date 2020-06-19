@@ -47,7 +47,7 @@ public class ClientCell extends JPanel {
         removeButton.setEnabled(false);
         removeButton.addActionListener(e -> deleteClient());
 
-        JCheckBox fideleCheckBox = new JCheckBox("Fidèle : ", client.getFidele());
+        JCheckBox fideleCheckBox = new JCheckBox("FidÃ¨le : ", client.getFidele());
         fideleCheckBox.setBorder(BorderFactory.createEmptyBorder());
         fideleCheckBox.setContentAreaFilled(false);
         fideleCheckBox.addItemListener(e -> client.setFidele(e.getStateChange() == 1 ? true : false));

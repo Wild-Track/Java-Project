@@ -1,11 +1,19 @@
 package Models.Produits;
 
+import java.util.UUID;
+
 public final class ManuelScolaire extends Livre {
 
 	private final String annee;
 
-	public ManuelScolaire(String titre, double tarif_journa, String auteur, String annee) {
-		super(titre, tarif_journa, auteur);
+	public ManuelScolaire(String titre, double tarifJourna, String auteur, String annee) {
+		super(titre, tarifJourna, auteur);
+
+		this.annee = annee;
+	}
+
+	public ManuelScolaire(UUID id, String titre, double tarifJourna, String auteur, boolean emprunte, String annee) {
+		super(id, titre, tarifJourna, auteur, emprunte);
 
 		this.annee = annee;
 	}
